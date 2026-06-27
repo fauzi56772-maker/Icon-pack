@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icon Pack Generator – Build Custom Icon Packs</title>
+  <meta name="description" content="Build your custom icon pack from popular icon libraries in seconds. Export as SVG, PNG or WebP ZIP bundle." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+      </span>
+      <span class="logo-text">IconPack<span class="logo-accent">Gen</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#library" class="nav-link">Library</a>
+      <a href="#customizer" class="nav-link">Customize</a>
+      <a href="#preview" class="nav-link">Preview</a>
+      <a href="#download" class="nav-link">Download</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="btn-fav nav-fav-btn" id="navFavBtn" title="Favorites">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <span class="fav-badge" id="navFavBadge">0</span>
+      </button>
+      <a href="#download" class="btn-primary btn-sm">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Export Pack
+      </a>
+    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#library" class="nav-link">Library</a>
+    <a href="#customizer" class="nav-link">Customize</a>
+    <a href="#preview" class="nav-link">Preview</a>
+    <a href="#download" class="nav-link">Download</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Free & Open Source
+      </div>
+      <h1 class="hero-title">
+        Build Your <span class="gradient-text">Custom Icon Pack</span><br/>in Seconds
+      </h1>
+      <p class="hero-sub">
+        Pick icons from Lucide, Heroicons & more. Customize colors, sizes, and styles. 
+        Export as SVG, PNG, or WebP — all in one ZIP bundle, right in your browser.
+      </p>
+      <div class="hero-actions">
+        <a href="#library" class="btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Start Creating
+        </a>
+        <a href="#library" class="btn-ghost btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Browse Icons
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" id="statTotal">300+</span><span class="stat-label">Icons</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Libraries</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">3</span><span class="stat-label">Formats</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="icon-grid-preview" id="heroIconGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAIN APP ===================== -->
+<main class="app-main" id="library">
+  <div class="app-layout">
+
+    <!-- LEFT: LIBRARY + ICONS -->
+    <div class="app-content">
+
+      <!-- Library Tabs & Search -->
+      <div class="library-header glass-card">
+        <div class="library-top">
+          <div class="library-title-row">
+            <h2 class="section-title">Icon Library</h2>
+            <div class="selection-info">
+              <span id="selectedCount">0</span> selected
+              <button class="btn-link" id="selectAllBtn">Select All</button>
+              <button class="btn-link danger" id="clearAllBtn">Clear All</button>
+            </div>
+          </div>
+          <div class="search-bar-wrap">
+            <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search icons… (e.g. home, arrow, user)" autocomplete="off" />
+            <button class="search-clear" id="searchClear" title="Clear search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Library Source Tabs -->
+        <div class="library-tabs" id="libraryTabs" role="tablist">
+          <button class="lib-tab active" data-lib="all" role="tab">All</button>
+          <button class="lib-tab" data-lib="lucide" role="tab">
+            <img src="https://lucide.dev/logo.dark.svg" alt="" class="lib-logo" onerror="this.style.display='none'" />
+            Lucide
+          </button>
+          <button class="lib-tab" data-lib="heroicons" role="tab">Heroicons</button>
+          <button class="lib-tab" data-lib="material" role="tab">Material</button>
+          <button class="lib-tab" data-lib="custom" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            My SVGs
+          </button>
+          <button class="lib-tab" data-lib="favorites" role="tab">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            Favorites
+          </button>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills" id="categoryPills">
+          <button class="cat-pill active" data-cat="all">All</button>
+          <button class="cat-pill" data-cat="ui">UI Elements</button>
+          <button class="cat-pill" data-cat="arrows">Arrows</button>
+          <button class="cat-pill" data-cat="social">Social Media</button>
+          <button class="cat-pill" data-cat="business">Business</button>
+          <button class="cat-pill" data-cat="files">Files</button>
+          <button class="cat-pill" data-cat="devices">Devices</button>
+          <button class="cat-pill" data-cat="coding">Coding</button>
+          <button class="cat-pill" data-cat="ecommerce">E-commerce</button>
+          <button class="cat-pill" data-cat="weather">Weather</button>
+        </div>
+      </div>
+
+      <!-- Upload Custom SVG -->
+      <div class="upload-zone glass-card" id="uploadZone">
+        <input type="file" id="svgUpload" accept=".svg" multiple hidden />
+        <div class="upload-content" id="uploadContent">
+          <div class="upload-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <p class="upload-text"><strong>Import Custom SVG</strong> — Drag & drop or <button class="btn-link" id="uploadTrigger">click to browse</button></p>
+          <p class="upload-hint">Supports .svg files • Multiple files allowed</p>
+        </div>
+      </div>
+
+      <!-- Icon Grid -->
+      <div class="icon-grid-wrap">
+        <div class="icon-grid" id="iconGrid" role="list"></div>
+        <div class="icon-grid-empty" id="iconGridEmpty" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>No icons found for "<span id="emptyQuery"></span>"</p>
+          <button class="btn-ghost btn-sm" id="clearSearchBtn">Clear Search</button>
+        </div>
+        <div class="load-more-wrap" id="loadMoreWrap">
+          <button class="btn-ghost" id="loadMoreBtn">Load More Icons</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CUSTOMIZER SIDEBAR -->
+    <aside class="customizer-sidebar" id="customizer">
+      <div class="customizer-inner">
+        <div class="customizer-header">
+          <h3 class="customizer-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 18.66l-1.41 1.41M20 12h-2M6 12H4M19.07 19.07l-1.41-1.41M5.34 5.34L3.93 3.93M12 20v-2M12 6V4"/></svg>
+            Customizer
+          </h3>
+          <button class="btn-ghost btn-xs" id="resetCustomizer" title="Reset to defaults">Reset</button>
+        </div>
+
+        <!-- Color Section -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Icon Color</h4>
+            <button class="section-toggle" data-section="color">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-color">
+            <div class="color-mode-tabs">
+              <button class="color-mode-tab active" data-mode="solid">Solid</button>
+              <button class="color-mode-tab" data-mode="gradient">Gradient</button>
+            </div>
+            <div id="solidColorPanel">
+              <div class="color-presets" id="colorPresets">
+                <button class="color-preset active" data-color="#1a1a2e" style="background:#1a1a2e" title="Dark"></button>
+                <button class="color-preset" data-color="#ffffff" style="background:#ffffff;border:2px solid #e5e7eb" title="White"></button>
+                <button class="color-preset" data-color="#3b82f6" style="background:#3b82f6" title="Blue"></button>
+                <button class="color-preset" data-color="#ef4444" style="background:#ef4444" title="Red"></button>
+                <button class="color-preset" data-color="#22c55e" style="background:#22c55e" title="Green"></button>
+                <button class="color-preset" data-color="#8b5cf6" style="background:#8b5cf6" title="Purple"></button>
+                <button class="color-preset" data-color="#f97316" style="background:#f97316" title="Orange"></button>
+                <button class="color-preset" data-color="#06b6d4" style="background:#06b6d4" title="Cyan"></button>
+              </div>
+              <div class="color-picker-row">
+                <input type="color" id="colorPicker" class="color-picker-input" value="#1a1a2e" />
+                <input type="text" id="colorHex" class="color-hex-input" value="#1a1a2e" placeholder="#000000" />
+              </div>
+            </div>
+            <div id="gradientColorPanel" style="display:none">
+              <div class="gradient-row">
+                <div class="gradient-stop">
+                  <label>Start</label>
+                  <input type="color" id="gradStart" value="#3b82f6" class="color-picker-input" />
+                </div>
+                <div class="gradient-stop">
+                  <label>End</label>
+                  <input type="color" id="gradEnd" value="#8b5cf6" class="color-picker-input" />
+                </div>
+              </div>
+              <div class="gradient-dir-row">
+                <label>Direction</label>
+                <select id="gradDir" class="custom-select">
+                  <option value="horizontal">Horizontal →</option>
+                  <option value="vertical">Vertical ↓</option>
+                  <option value="diagonal">Diagonal ↘</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Background Section -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Background</h4>
+            <button class="section-toggle" data-section="bg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-bg">
+            <div class="bg-type-grid" id="bgTypeGrid">
+              <button class="bg-type-btn active" data-bg="transparent">
+                <div class="bg-preview bg-transparent-preview"></div>
+                <span>None</span>
+              </button>
+              <button class="bg-type-btn" data-bg="solid">
+                <div class="bg-preview" id="bgSolidPreview" style="background:#3b82f6"></div>
+                <span>Solid</span>
+              </button>
+              <button class="bg-type-btn" data-bg="rounded">
+                <div class="bg-preview" style="background:#3b82f6;border-radius:8px"></div>
+                <span>Rounded</span>
+              </button>
+              <button class="bg-type-btn" data-bg="circle">
+                <div class="bg-preview" style="background:#3b82f6;border-radius:50%"></div>
+                <span>Circle</span>
+              </button>
+            </div>
+            <div id="bgColorRow" style="display:none" class="color-picker-row">
+              <input type="color" id="bgColorPicker" class="color-picker-input" value="#3b82f6" />
+              <input type="text" id="bgColorHex" class="color-hex-input" value="#3b82f6" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Size Section -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Size</h4>
+            <button class="section-toggle" data-section="size">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-size">
+            <div class="slider-wrap">
+              <input type="range" id="sizeSlider" class="custom-slider" min="16" max="256" value="48" />
+              <div class="slider-val-row">
+                <span class="slider-val" id="sizeVal">48px</span>
+                <input type="number" id="sizeInput" class="mini-input" value="48" min="16" max="256" />
+              </div>
+            </div>
+            <div class="size-presets">
+              <button class="size-preset" data-size="16">16</button>
+              <button class="size-preset" data-size="24">24</button>
+              <button class="size-preset active" data-size="48">48</button>
+              <button class="size-preset" data-size="64">64</button>
+              <button class="size-preset" data-size="128">128</button>
+              <button class="size-preset" data-size="256">256</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stroke Width -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Stroke Width</h4>
+            <button class="section-toggle" data-section="stroke">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-stroke">
+            <div class="slider-wrap">
+              <input type="range" id="strokeSlider" class="custom-slider" min="0.5" max="5" step="0.5" value="2" />
+              <div class="slider-val-row">
+                <span class="slider-val" id="strokeVal">2px</span>
+                <input type="number" id="strokeInput" class="mini-input" value="2" min="0.5" max="5" step="0.5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Padding -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Padding</h4>
+            <button class="section-toggle" data-section="padding">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-padding">
+            <div class="slider-wrap">
+              <input type="range" id="paddingSlider" class="custom-slider" min="0" max="50" value="0" />
+              <div class="slider-val-row">
+                <span class="slider-val" id="paddingVal">0px</span>
+                <input type="number" id="paddingInput" class="mini-input" value="0" min="0" max="50" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Export Format -->
+        <div class="custom-section">
+          <div class="custom-section-header">
+            <h4>Export Format</h4>
+            <button class="section-toggle" data-section="format">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <div class="custom-section-body" id="section-format">
+            <div class="format-grid">
+              <button class="format-btn active" data-fmt="svg">
+                <span class="format-icon">SVG</span>
+                <span class="format-label">Vector</span>
+              </button>
+              <button class="format-btn" data-fmt="png">
+                <span class="format-icon">PNG</span>
+                <span class="format-label">Raster</span>
+              </button>
+              <button class="format-btn" data-fmt="webp">
+                <span class="format-icon">WebP</span>
+                <span class="format-label">Modern</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pack Info -->
+        <div class="custom-section pack-info-section">
+          <div class="custom-section-header">
+            <h4>Pack Info</h4>
+          </div>
+          <div class="custom-section-body" id="section-packinfo">
+            <div class="pack-info-grid">
+              <div class="pack-info-item">
+                <span class="pack-info-label">Selected</span>
+                <span class="pack-info-val" id="packInfoCount">0 icons</span>
+              </div>
+              <div class="pack-info-item">
+                <span class="pack-info-label">Format</span>
+                <span class="pack-info-val" id="packInfoFormat">SVG</span>
+              </div>
+              <div class="pack-info-item">
+                <span class="pack-info-label">Est. Size</span>
+                <span class="pack-info-val" id="packInfoSize">0 KB</span>
+              </div>
+            </div>
+            <div class="pack-name-row">
+              <label for="packName">Pack Name</label>
+              <input type="text" id="packName" class="text-input" placeholder="my-icon-pack" value="my-icon-pack" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Button in Sidebar -->
+        <button class="btn-primary btn-full btn-download-main" id="sidebarDownloadBtn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Generate ZIP
+        </button>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- ===================== LIVE PREVIEW ===================== -->
+<section class="preview-section" id="preview">
+  <div class="container">
+    <div class="section-header-row">
+      <div>
+        <h2 class="section-title">Live Preview</h2>
+        <p class="section-sub">See your selected icons with current customization applied in real-time.</p>
+      </div>
+      <div class="preview-controls">
+        <div class="preview-bg-toggle">
+          <button class="preview-bg-btn active" data-pbg="light" title="Light background">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+          </button>
+          <button class="preview-bg-btn" data-pbg="dark" title="Dark background">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+          <button class="preview-bg-btn" data-pbg="checker" title="Transparent checker">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </button>
+        </div>
+        <select id="previewZoom" class="custom-select select-sm">
+          <option value="1">100%</option>
+          <option value="1.5">150%</option>
+          <option value="2">200%</option>
+          <option value="0.75">75%</option>
+        </select>
+      </div>
+    </div>
+    <div class="preview-canvas glass-card" id="previewCanvas" data-pbg="light">
+      <div class="preview-empty" id="previewEmpty">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <p>No icons selected yet.<br/><a href="#library" class="btn-link">Browse the library</a> to get started.</p>
+      </div>
+      <div class="preview-grid" id="previewGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOWNLOAD SECTION ===================== -->
+<section class="download-section" id="download">
+  <div class="container">
+    <div class="download-card glass-card">
+      <div class="download-left">
+        <h2 class="section-title">Download Your Pack</h2>
+        <p class="section-sub">Your icon pack will be generated and downloaded as a ZIP file containing all your customized icons plus a README.</p>
+        <div class="pack-summary" id="packSummary">
+          <div class="summary-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <div>
+              <span class="summary-label">Icons</span>
+              <strong id="dlSummaryCount">0</strong>
+            </div>
+          </div>
+          <div class="summary-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            <div>
+              <span class="summary-label">Format</span>
+              <strong id="dlSummaryFormat">SVG</strong>
+            </div>
+          </div>
+          <div class="summary-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <span class="summary-label">Generated</span>
+              <strong id="dlSummaryDate">—</strong>
+            </div>
+          </div>
+          <div class="summary-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            <div>
+              <span class="summary-label">Pack Name</span>
+              <strong id="dlSummaryName">my-icon-pack</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ZIP Structure Preview -->
+        <div class="zip-structure">
+          <p class="zip-struct-title">ZIP Structure:</p>
+          <div class="zip-tree" id="zipTree">
+            <div class="zip-folder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+              <span id="zipFolderName">my-icon-pack/</span>
+            </div>
+            <div class="zip-files" id="zipFileList">
+              <div class="zip-file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/></svg> Select icons to see files…</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-right">
+        <div class="download-action-card">
+          <div class="dl-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <h3>Ready to Download</h3>
+          <p>Select icons from the library above to generate your custom pack.</p>
+          <button class="btn-primary btn-xl btn-full" id="mainDownloadBtn" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Generate &amp; Download ZIP
+          </button>
+          <p class="dl-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            100% client-side • No server upload • No data stored
+          </p>
+        </div>
+
+        <!-- Recent Downloads -->
+        <div class="recent-downloads" id="recentDownloads">
+          <h4>Recent Downloads</h4>
+          <div class="recent-list" id="recentList">
+            <p class="recent-empty">No recent downloads yet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">IconPack<span class="logo-accent">Gen</span></span>
+      <p>Build beautiful icon packs for your projects, right in your browser.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#library">Library</a>
+      <a href="#customizer">Customize</a>
+      <a href="#preview">Preview</a>
+      <a href="#download">Download</a>
+    </div>
+    <div class="footer-tech">
+      <span>Built with</span>
+      <a href="https://lucide.dev" target="_blank" rel="noopener">Lucide</a>
+      <span>•</span>
+      <a href="https://stuk.github.io/jszip/" target="_blank" rel="noopener">JSZip</a>
+      <span>•</span>
+      <span>Vanilla JS</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== TOAST ===================== -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ===================== MODAL: SVG CODE ===================== -->
+<div class="modal-overlay" id="svgModal" hidden>
+  <div class="modal-box glass-card">
+    <div class="modal-header">
+      <h4 id="modalTitle">SVG Code</h4>
+      <button class="modal-close" id="modalClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <pre class="code-block" id="svgCodeBlock"></pre>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-primary" id="copySvgBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy SVG
+      </button>
+      <button class="btn-ghost" id="modalCloseBtn2">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== PROGRESS OVERLAY ===================== -->
+<div class="progress-overlay" id="progressOverlay" hidden>
+  <div class="progress-box glass-card">
+    <div class="progress-spinner"></div>
+    <h4 id="progressTitle">Generating ZIP…</h4>
+    <p id="progressStatus">Processing icons…</p>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <p class="progress-pct" id="progressPct">0%</p>
+  </div>
+</div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
